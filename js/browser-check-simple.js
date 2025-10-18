@@ -1,34 +1,13 @@
-// Browser compatibility check for Gantt Chart Platform
+// Simple browser compatibility check for the Gantt Chart Platform
 
 (function() {
     'use strict';
 
     // Check if browser supports required features
     function checkBrowserSupport() {
-        const errors = [];
+        var errors = [];
         
-        // Check for modern JavaScript features (warnings only, not errors)
-        if (typeof Symbol === 'undefined') {
-            console.warn('Symbol is not supported, using polyfill');
-        }
-        
-        if (typeof Map === 'undefined') {
-            console.warn('Map is not supported, using polyfill');
-        }
-        
-        if (typeof Set === 'undefined') {
-            console.warn('Set is not supported, using polyfill');
-        }
-        
-        // Check for ES6 classes (optional with polyfill)
-        try {
-            eval('class TestClass {}');
-        } catch (e) {
-            // Don't add to errors, just log warning
-            console.warn('ES6 classes not supported, using polyfills');
-        }
-        
-        // Check for localStorage
+        // Check for localStorage (critical)
         try {
             localStorage.setItem('test', 'test');
             localStorage.removeItem('test');
@@ -36,7 +15,7 @@
             errors.push('localStorage is not available');
         }
         
-        // Check for modern DOM features
+        // Check for modern DOM features (critical)
         if (!document.querySelector) {
             errors.push('querySelector is not supported');
         }
@@ -45,23 +24,24 @@
             errors.push('addEventListener is not supported');
         }
         
-        // Check for CSS Grid support (optional)
-        if (!CSS.supports('display', 'grid')) {
-            console.warn('CSS Grid is not supported, falling back to flexbox');
+        // Check for basic JavaScript features (critical)
+        if (typeof Array.prototype.forEach === 'undefined') {
+            errors.push('Array.forEach is not supported');
+        }
+        
+        if (typeof JSON === 'undefined') {
+            errors.push('JSON is not supported');
         }
         
         return errors;
     }
     
-    // Display browser compatibility message
+    // Display browser compatibility message only for critical errors
     function showBrowserMessage() {
-        const errors = checkBrowserSupport();
-        
-        // Only show warning for critical errors (localStorage, DOM features)
-        // Modern JS features are handled by polyfills
+        var errors = checkBrowserSupport();
         
         if (errors.length > 0) {
-            const message = document.createElement('div');
+            var message = document.createElement('div');
             message.style.cssText = 
                 'position: fixed;' +
                 'top: 0;' +
@@ -89,24 +69,20 @@
             
             document.body.appendChild(message);
             
-            // Prevent app initialization only for critical errors
+            // Prevent app initialization
             window.browserNotSupported = true;
         } else {
-            // Show info message for non-critical issues
-            if (errors.length > 0) {
-                console.warn('Browser compatibility issues detected, but using polyfills:', errors);
-            }
-            // Don't set browserNotSupported for non-critical errors
+            // Browser is supported
             window.browserNotSupported = false;
+            console.log('Browser compatibility check passed');
         }
     }
     
-    // Check browser after polyfills are loaded
+    // Check browser after a short delay to ensure polyfills are loaded
     function waitForPolyfills() {
-        // Wait a bit for polyfills to load
         setTimeout(function() {
             showBrowserMessage();
-        }, 100);
+        }, 200);
     }
     
     // Check browser on load
