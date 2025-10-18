@@ -1,0 +1,530 @@
+/* Responsive Design Styles */
+
+/* Mobile First Approach */
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+    .header {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .header-left h1 {
+        font-size: 18px;
+    }
+    
+    .header-center {
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 8px;
+    }
+    
+    .header-right {
+        gap: 6px;
+    }
+    
+    .header-right .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .header-right .btn i {
+        display: none;
+    }
+    
+    .toolbar {
+        padding: 8px 12px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .toolbar-section {
+        justify-content: center;
+    }
+    
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .task-panel {
+        width: 100%;
+        min-width: unset;
+        max-height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .panel-header {
+        padding: 12px 16px;
+    }
+    
+    .task-info {
+        width: 100%;
+        padding: 6px 12px;
+    }
+    
+    .task-name {
+        font-size: 13px;
+    }
+    
+    .gantt-container {
+        height: calc(100vh - 200px);
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 16px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .status-bar {
+        padding: 6px 12px;
+        font-size: 12px;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+    
+    .zoom-controls {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .zoom-button {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        padding: 10px 16px;
+    }
+    
+    .header-right .btn {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+    
+    .toolbar {
+        padding: 10px 16px;
+        gap: 16px;
+    }
+    
+    .task-panel {
+        width: 280px;
+    }
+    
+    .task-info {
+        width: 280px;
+    }
+    
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header {
+        padding: 12px 18px;
+    }
+    
+    .toolbar {
+        padding: 12px 18px;
+    }
+    
+    .task-panel {
+        width: 320px;
+    }
+    
+    .task-info {
+        width: 320px;
+    }
+    
+    .main-content {
+        flex-direction: row;
+    }
+    
+    .gantt-container {
+        flex: 1;
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .task-panel {
+        width: 350px;
+    }
+    
+    .task-info {
+        width: 350px;
+    }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .task-panel {
+        width: 400px;
+    }
+    
+    .task-info {
+        width: 400px;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+    .header {
+        padding: 6px 16px;
+    }
+    
+    .header-left h1 {
+        font-size: 20px;
+    }
+    
+    .toolbar {
+        padding: 8px 16px;
+    }
+    
+    .main-content {
+        height: calc(100vh - 120px);
+    }
+    
+    .task-panel {
+        max-height: none;
+    }
+    
+    .gantt-container {
+        height: auto;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .task-bar {
+        box-shadow: 0 0.5px 1.5px rgba(0,0,0,0.1);
+    }
+    
+    .task-bar:hover {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    
+    .modal-content {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .btn-icon {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .task-item {
+        min-height: 48px;
+        padding: 12px 16px;
+    }
+    
+    .task-bar {
+        min-height: 24px;
+    }
+    
+    .dropdown-item,
+    .context-menu-item {
+        min-height: 44px;
+        padding: 12px 16px;
+    }
+    
+    .modal-close {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .loading-spinner {
+        animation: none;
+    }
+    
+    .task-bar {
+        transition: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1f2937;
+        --bg-secondary: #374151;
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --border-color: #4b5563;
+        --hover-bg: #374151;
+    }
+    
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+    
+    .header {
+        background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    }
+    
+    .toolbar,
+    .task-panel,
+    .gantt-container {
+        background: var(--bg-secondary);
+        border-color: var(--border-color);
+    }
+    
+    .task-item:hover {
+        background-color: var(--hover-bg);
+    }
+    
+    .modal-content {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background: var(--bg-primary);
+        border-color: var(--border-color);
+        color: var(--text-primary);
+    }
+    
+    .dropdown-menu,
+    .context-menu {
+        background: var(--bg-secondary);
+        border-color: var(--border-color);
+    }
+    
+    .dropdown-item:hover,
+    .context-menu-item:hover {
+        background-color: var(--hover-bg);
+    }
+}
+
+/* Print Optimizations */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .header,
+    .toolbar,
+    .status-bar,
+    .modal,
+    .zoom-controls,
+    .dropdown,
+    .context-menu {
+        display: none !important;
+    }
+    
+    .main-content {
+        height: auto !important;
+        overflow: visible !important;
+        flex-direction: row !important;
+    }
+    
+    .task-panel {
+        width: 300px !important;
+        border-right: 1px solid #ccc !important;
+        background: white !important;
+    }
+    
+    .gantt-container {
+        flex: 1 !important;
+        overflow: visible !important;
+    }
+    
+    .task-row {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .task-bar {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        background: #e5e7eb !important;
+    }
+    
+    .task-bar.completed {
+        background: #10b981 !important;
+    }
+    
+    .task-bar.in-progress {
+        background: #f59e0b !important;
+    }
+    
+    .task-bar.delayed {
+        background: #ef4444 !important;
+    }
+    
+    .grid-line {
+        border-color: #ccc !important;
+    }
+    
+    .dependency-arrow {
+        stroke: #000 !important;
+        fill: #000 !important;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .task-bar {
+        border: 2px solid currentColor;
+    }
+    
+    .modal-content {
+        border: 2px solid #000;
+    }
+    
+    .dropdown-menu,
+    .context-menu {
+        border: 2px solid #000;
+    }
+}
+
+/* Focus Visible for Keyboard Navigation */
+@media (prefers-reduced-motion: no-preference) {
+    .btn:focus-visible,
+    .btn-icon:focus-visible,
+    .task-item:focus-visible {
+        outline: 2px solid #4f46e5;
+        outline-offset: 2px;
+    }
+}
+
+/* Container Queries (Future-proofing) */
+@container (max-width: 400px) {
+    .task-item-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .task-item-details {
+        flex-wrap: wrap;
+    }
+}
+
+/* Hover Support Detection */
+@media (hover: none) {
+    .btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .task-item:hover {
+        background-color: transparent;
+    }
+    
+    .task-item:active {
+        background-color: #f8fafc;
+    }
+    
+    .dropdown-item:hover,
+    .context-menu-item:hover {
+        background-color: transparent;
+    }
+    
+    .dropdown-item:active,
+    .context-menu-item:active {
+        background-color: #f3f4f6;
+    }
+}
+
+/* Specific Device Adjustments */
+@media screen and (max-width: 320px) {
+    .header-left h1 {
+        font-size: 16px;
+    }
+    
+    .header-right .btn {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .toolbar {
+        padding: 6px 8px;
+    }
+    
+    .modal-content {
+        width: 98%;
+        margin: 5% auto;
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 12px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+    .task-panel {
+        width: 450px;
+    }
+    
+    .task-info {
+        width: 450px;
+    }
+    
+    .modal-content {
+        max-width: 800px;
+    }
+    
+    .toolbar {
+        padding: 16px 24px;
+    }
+    
+    .header {
+        padding: 16px 24px;
+    }
+}
