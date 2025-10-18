@@ -203,12 +203,25 @@
     <input type="file" id="file-input" accept=".json,.csv" style="display: none;">
 
     <!-- Scripts -->
+    <script src="js/polyfills.js"></script>
     <script src="js/browser-check.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/data-manager.js"></script>
-    <script src="js/gantt-chart.js"></script>
-    <script src="js/task-manager.js"></script>
-    <script src="js/ui-manager.js"></script>
-    <script src="js/app.js"></script>
+    <script>
+        // Check if ES6 classes are supported, if not use ES5 version
+        if (typeof Symbol === 'undefined' || !window.Map || !window.Set) {
+            document.write('<script src="js/utils-es5.js"><\/script>');
+            document.write('<script src="js/data-manager-es5.js"><\/script>');
+            document.write('<script src="js/gantt-chart-es5.js"><\/script>');
+            document.write('<script src="js/task-manager-es5.js"><\/script>');
+            document.write('<script src="js/ui-manager-es5.js"><\/script>');
+            document.write('<script src="js/app-es5.js"><\/script>');
+        } else {
+            document.write('<script src="js/utils.js"><\/script>');
+            document.write('<script src="js/data-manager.js"><\/script>');
+            document.write('<script src="js/gantt-chart.js"><\/script>');
+            document.write('<script src="js/task-manager.js"><\/script>');
+            document.write('<script src="js/ui-manager.js"><\/script>');
+            document.write('<script src="js/app.js"><\/script>');
+        }
+    </script>
 </body>
 </html>

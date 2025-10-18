@@ -20,11 +20,11 @@
             errors.push('Set is not supported');
         }
         
-        // Check for ES6 classes
+        // Check for ES6 classes (optional with polyfill)
         try {
             eval('class TestClass {}');
         } catch (e) {
-            errors.push('ES6 classes are not supported');
+            console.warn('ES6 classes not supported, using polyfills');
         }
         
         // Check for localStorage
