@@ -1,5 +1,8 @@
 // Main Application - Entry point and coordination of all components
 
+(function() {
+    'use strict';
+
 class GanttApp {
     constructor() {
         this.dataManager = null;
@@ -584,6 +587,12 @@ class GanttApp {
 let ganttApp;
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Check browser support before initializing
+    if (window.browserNotSupported) {
+        console.error('Browser not supported, skipping app initialization');
+        return;
+    }
+    
     ganttApp = new GanttApp();
     
     // Make app globally available for debugging
@@ -609,3 +618,8 @@ window.addEventListener('beforeunload', (event) => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = GanttApp;
 }
+
+// Make GanttApp globally available
+window.GanttApp = GanttApp;
+
+})();

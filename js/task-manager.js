@@ -1,5 +1,8 @@
 // Task Manager - Handles task operations and UI interactions
 
+(function() {
+    'use strict';
+
 class TaskManager {
     constructor(dataManager, uiManager) {
         this.dataManager = dataManager;
@@ -610,3 +613,8 @@ class TaskManager {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = TaskManager;
 }
+
+// Make TaskManager globally available
+window.TaskManager = TaskManager;
+
+})();

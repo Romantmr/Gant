@@ -1,5 +1,8 @@
 // Gantt Chart Component - Main visualization component
 
+(function() {
+    'use strict';
+
 class GanttChart {
     constructor(container, dataManager) {
         this.container = container;
@@ -663,3 +666,8 @@ class GanttChart {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = GanttChart;
 }
+
+// Make GanttChart globally available
+window.GanttChart = GanttChart;
+
+})();

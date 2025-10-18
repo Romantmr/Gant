@@ -1,5 +1,8 @@
 // Data Manager - Handles all data operations for the Gantt Chart Platform
 
+(function() {
+    'use strict';
+
 class DataManager {
     constructor() {
         this.currentProject = null;
@@ -598,3 +601,8 @@ class DataManager {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = DataManager;
 }
+
+// Make DataManager globally available
+window.DataManager = DataManager;
+
+})();

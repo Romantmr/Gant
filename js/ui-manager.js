@@ -1,5 +1,8 @@
 // UI Manager - Handles user interface interactions and notifications
 
+(function() {
+    'use strict';
+
 class UIManager {
     constructor(dataManager) {
         this.dataManager = dataManager;
@@ -668,3 +671,8 @@ if (!document.getElementById('notification-styles')) {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = UIManager;
 }
+
+// Make UIManager globally available
+window.UIManager = UIManager;
+
+})();

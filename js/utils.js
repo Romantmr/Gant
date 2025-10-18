@@ -1,4 +1,8 @@
 // Utility functions for the Gantt Chart Platform
+// Ensure proper UTF-8 encoding and error handling
+
+(function() {
+    'use strict';
 
 class Utils {
     // Date utilities
@@ -461,3 +465,8 @@ class Utils {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Utils;
 }
+
+// Make Utils globally available
+window.Utils = Utils;
+
+})();
